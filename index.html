@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Agavitox — Descubre Tequila, Jalisco como nunca antes. Restaurantes, hoteles, tours y experiencias únicas en el pueblo mágico del tequila." />
+  <title>Agavitox — Tequila, Jalisco</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ========== CURSOR PERSONALIZADO ========== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- ========== LOADER ========== -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">
+      <span class="loader-a">A</span>
+      <span class="loader-word">gavitox</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+
+  <!-- ========== HEADER / NAVEGACIÓN ========== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <!-- Logo -->
+      <a href="#inicio" class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Agavitox</span>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="#restaurantes" class="nav-link">Restaurantes</a></li>
+          <li><a href="#lugares" class="nav-link">Lugares</a></li>
+          <li><a href="#hoteles" class="nav-link">Hoteles</a></li>
+          <li><a href="#recomendaciones" class="nav-link">Tips Locales</a></li>
+          <li><a href="#tours" class="nav-link">Tours</a></li>
+        </ul>
+        <a href="#tours" class="btn-reservar">Reservar Tour</a>
+      </nav>
+
+      <!-- Hamburguesa Móvil -->
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Menú Móvil -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-list">
+        <li><a href="#restaurantes" class="mobile-nav-link">Restaurantes</a></li>
+        <li><a href="#lugares" class="mobile-nav-link">Lugares</a></li>
+        <li><a href="#hoteles" class="mobile-nav-link">Hoteles</a></li>
+        <li><a href="#recomendaciones" class="mobile-nav-link">Tips Locales</a></li>
+        <li><a href="#tours" class="mobile-nav-link">Tours</a></li>
+        <li><a href="#tours" class="mobile-nav-link cta">Reservar Tour →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="inicio">
+    <!-- Fondo con overlay y patrón de agave -->
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1587556930799-8dca6fad6d43?w=1800&q=80"
+        alt="Campos de agave en Tequila, Jalisco" class="hero-img" />
+      <div class="hero-overlay"></div>
+      <div class="hero-grain"></div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        Pueblo Mágico · Jalisco, México
+      </div>
+      <h1 class="hero-title reveal-up">
+        Descubre<br />
+        <em>Tequila</em><br />
+        como nunca antes
+      </h1>
+      <p class="hero-subtitle reveal-up">
+        Campos infinitos de agave azul, destilerías centenarias,<br class="br-desktop" />
+        gastronomía auténtica y experiencias que marcan para siempre.
+      </p>
+      <div class="hero-ctas reveal-up">
+        <a href="#restaurantes" class="btn-primary">Explorar destino</a>
+        <a href="#tours" class="btn-ghost">Ver tours ↓</a>
+      </div>
+    </div>
+
+    <!-- Stats flotantes -->
+    <div class="hero-stats reveal-up">
+      <div class="stat">
+        <span class="stat-num">300+</span>
+        <span class="stat-label">Años de historia</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">50k</span>
+        <span class="stat-label">Visitantes al año</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">18</span>
+        <span class="stat-label">Destilerías activas</span>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ========== FILTROS ========== -->
+  <section class="filters-section" id="explorar">
+    <div class="container">
+      <div class="filters-header reveal-up">
+        <h2 class="section-title">Explora Tequila</h2>
+        <p class="section-sub">Filtra por lo que más te interesa descubrir</p>
+      </div>
+      <div class="filters reveal-up" id="filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="restaurantes">Restaurantes</button>
+        <button class="filter-btn" data-filter="lugares">Lugares</button>
+        <button class="filter-btn" data-filter="hoteles">Hoteles</button>
+        <button class="filter-btn" data-filter="recomendaciones">Tips</button>
+        <button class="filter-btn" data-filter="tours">Tours</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESTAURANTES ========== -->
+  <section class="cards-section" id="restaurantes" data-section="restaurantes">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">🍽️ Gastronomía</div>
+        <h2 class="section-title">Restaurantes</h2>
+        <p class="section-sub">De la cocina tradicional jalisciense a la alta cocina con maridaje de tequila</p>
+      </div>
+      <div class="cards-grid" id="grid-restaurantes">
+
+        <div class="card reveal-card" data-category="restaurantes" data-name="La Antigua Destilería"
+          data-desc="Ubicado dentro de una hacienda del siglo XVIII, este restaurante ofrece platillos de la cocina tradicional jalisciense con maridaje exclusivo de tequilas premium. Su birria de res y el caldo tlalpeño son legendarios entre los locales."
+          data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" data-rating="4.9"
+          data-precio="$$$" data-horario="1pm – 11pm">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=75"
+              alt="La Antigua Destilería" loading="lazy" />
+            <span class="card-badge">⭐ 4.9</span>
+            <span class="card-precio">$$$</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">La Antigua Destilería</h3>
+            <p class="card-desc">Hacienda del S.XVIII con cocina jalisciense y maridaje de tequila premium. Su birria es
+              legendaria.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+        <div class="card reveal-card" data-category="restaurantes" data-name="El Agave Azul"
+          data-desc="Terraza con vista panorámica a los campos de agave. Especialistas en cocina de autor con ingredientes locales. El menú degustación de 7 tiempos con tequila infusionado es una experiencia gastronómica única en la región."
+          data-img="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" data-rating="4.8"
+          data-precio="$$$$" data-horario="2pm – 12am">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=75" alt="El Agave Azul"
+              loading="lazy" />
+            <span class="card-badge">⭐ 4.8</span>
+            <span class="card-precio">$$$$</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">El Agave Azul</h3>
+            <p class="card-desc">Terraza con vista a los agavales. Menú degustación de 7 tiempos con tequila
+              infusionado.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+        <div class="card reveal-card" data-category="restaurantes" data-name="Fonda La Cañada"
+          data-desc="El rincón favorito de los locales. Tortillas hechas a mano, pozole rojo, tamales y una michelada de tequila que no encontrarás en ningún otro lugar. Ambiente familiar, precios accesibles y sabor auténtico desde 1987."
+          data-img="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80" data-rating="4.7"
+          data-precio="$" data-horario="7am – 6pm">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=75" alt="Fonda La Cañada"
+              loading="lazy" />
+            <span class="card-badge">⭐ 4.7</span>
+            <span class="card-precio">$</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Fonda La Cañada</h3>
+            <p class="card-desc">El favorito de los locales desde 1987. Pozole rojo, tamales y una michelada de tequila
+              única.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LUGARES TURÍSTICOS ========== -->
+  <section class="cards-section bg-dark" id="lugares" data-section="lugares">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">🏛️ Cultura & Patrimonio</div>
+        <h2 class="section-title">Lugares para visitar</h2>
+        <p class="section-sub">Patrimonio de la Humanidad UNESCO al alcance de tus manos</p>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card card-dark reveal-card" data-category="lugares" data-name="Casa Sauza"
+          data-desc="Una de las destilerías más antiguas y emblemáticas de México, fundada en 1873. Recorre sus instalaciones históricas, conoce el proceso artesanal del tequila y disfruta una cata guiada de sus expresiones más exclusivas. Patrimonio arquitectónico único."
+          data-img="https://images.unsplash.com/photo-1562408590-e32931084e23?w=800&q=80" data-rating="4.9"
+          data-precio="$$" data-horario="9am – 5pm">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1562408590-e32931084e23?w=600&q=75" alt="Casa Sauza"
+              loading="lazy" />
+            <span class="card-badge">⭐ 4.9</span>
+            <span class="card-precio">Visita guiada</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Casa Sauza</h3>
+            <p class="card-desc">Destilería histórica fundada en 1873. Recorre sus instalaciones y disfruta una cata
+              exclusiva.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+        <div class="card card-dark reveal-card" data-category="lugares" data-name="Cerro de la Cruz"
+          data-desc="Desde este mirador natural obtendrás la mejor vista panorámica del Valle del Tequila y los interminables campos de agave azul. El ascenso toma unos 20 minutos y al llegar encontrarás una gran cruz emblemática del pueblo. El atardecer es mágico."
+          data-img="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" data-rating="4.8"
+          data-precio="Gratis" data-horario="Todo el día">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75" alt="Cerro de la Cruz"
+              loading="lazy" />
+            <span class="card-badge">⭐ 4.8</span>
+            <span class="card-precio">Gratis</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Cerro de la Cruz</h3>
+            <p class="card-desc">Mirador natural con la mejor vista del Valle. El atardecer entre agavales es
+              absolutamente mágico.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+        <div class="card card-dark reveal-card" data-category="lugares" data-name="Parroquia de Santiago Apóstol"
+          data-desc="La iglesia colonial más importante de Tequila, construida en el siglo XVII. Su arquitectura barroca, sus altares dorados y sus campanadas al mediodía son parte esencial del alma del pueblo. Uno de los lugares más fotografiados de Jalisco."
+          data-img="https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80" data-rating="4.9"
+          data-precio="Gratis" data-horario="6am – 8pm">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=75"
+              alt="Parroquia de Santiago Apóstol" loading="lazy" />
+            <span class="card-badge">⭐ 4.9</span>
+            <span class="card-precio">Gratis</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Parroquia de Santiago Apóstol</h3>
+            <p class="card-desc">Iglesia colonial del S.XVII. Arquitectura barroca, altares dorados y el corazón del
+              pueblo.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOTELES ========== -->
+  <section class="cards-section" id="hoteles" data-section="hoteles">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">🏨 Hospedaje</div>
+        <h2 class="section-title">Hoteles</h2>
+        <p class="section-sub">Desde haciendas boutique hasta experiencias de lujo entre agavales</p>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card reveal-card" data-category="hoteles" data-name="Hacienda Dorada del Agave"
+          data-desc="La joya hotelera de Tequila. 24 suites de lujo en una hacienda restaurada del siglo XIX, piscina de infinity con vista a los campos de agave, spa con tratamientos de piña de agave y desayuno de autor incluido. Una experiencia que redefine el lujo rural."
+          data-img="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" data-rating="5.0"
+          data-precio="$$$$" data-horario="Check-in 3pm">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=75"
+              alt="Hacienda Dorada del Agave" loading="lazy" />
+            <span class="card-badge">⭐ 5.0</span>
+            <span class="card-precio">Luxury</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Hacienda Dorada del Agave</h3>
+            <p class="card-desc">24 suites de lujo en hacienda del S.XIX. Infinity pool, spa de agave y desayuno de
+              autor incluido.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+        <div class="card reveal-card" data-category="hoteles" data-name="Hotel Boutique El Jimador"
+          data-desc="Ubicado en el corazón del centro histórico, este boutique hotel de 16 habitaciones fusiona la arquitectura colonial con el diseño contemporáneo. Cada cuarto está inspirado en una etapa del proceso del tequila. Bar privado y rooftop con vista a la parroquia."
+          data-img="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80" data-rating="4.8"
+          data-precio="$$$" data-horario="Check-in 2pm">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=75"
+              alt="Hotel Boutique El Jimador" loading="lazy" />
+            <span class="card-badge">⭐ 4.8</span>
+            <span class="card-precio">Boutique</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Boutique El Jimador</h3>
+            <p class="card-desc">16 habitaciones inspiradas en el tequila. Centro histórico, bar privado y rooftop con
+              vista a la parroquia.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+        <div class="card reveal-card" data-category="hoteles" data-name="Posada Los Agavales"
+          data-desc="La opción ideal para viajeros que buscan autenticidad sin sacrificar el confort. Esta posada familiar tiene 10 habitaciones acogedoras, jardín con macetas de agave, alberca y un desayuno casero que incluye los mejores chilaquiles del pueblo."
+          data-img="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80" data-rating="4.7"
+          data-precio="$$" data-horario="Check-in 1pm">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=75" alt="Posada Los Agavales"
+              loading="lazy" />
+            <span class="card-badge">⭐ 4.7</span>
+            <span class="card-precio">$$</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Posada Los Agavales</h3>
+            <p class="card-desc">Posada familiar con alberca, jardín de agave y el mejor desayuno casero del pueblo.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RECOMENDACIONES ========== -->
+  <section class="cards-section bg-gold" id="recomendaciones" data-section="recomendaciones">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">💡 Tips de locales</div>
+        <h2 class="section-title">Recomendaciones</h2>
+        <p class="section-sub">Los secretos que solo conocen quienes viven aquí</p>
+      </div>
+      <div class="cards-grid cards-grid-4">
+
+        <div class="card card-tip reveal-card" data-category="recomendaciones" data-name="Mercado Municipal"
+          data-desc="El mercado tradicional de Tequila es el mejor lugar para comprar artesanías locales, talavera, charrería, ropa bordada y los mejores souvenirs. Los martes hay tianguis con productores locales de agave. Llega temprano para los mejores precios y mayor variedad."
+          data-img="https://images.unsplash.com/photo-1518144585418-be0dcf6a8e2c?w=800&q=80" data-rating="4.6"
+          data-precio="Gratis" data-horario="7am – 7pm">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1518144585418-be0dcf6a8e2c?w=600&q=75" alt="Mercado Municipal"
+              loading="lazy" />
+            <span class="card-badge tip-badge">💡 Local</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Mercado Municipal</h3>
+            <p class="card-desc">Artesanías, talavera y souvenirs. Los martes hay tianguis con productores de agave.
+              ¡Llega temprano!</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+        <div class="card card-tip reveal-card" data-category="recomendaciones" data-name="Mejor época para visitar"
+          data-desc="Noviembre y diciembre son ideales: clima fresco, Festival del Tequila y menos turistas que en Semana Santa. Si quieres ver la jimación (cosecha del agave), febrero a abril es la mejor época. Evita julio y agosto por el calor y lluvias intensas."
+          data-img="https://images.unsplash.com/photo-1568901839119-631418a3910d?w=800&q=80" data-rating="5.0"
+          data-precio="Info" data-horario="Todo el año">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1568901839119-631418a3910d?w=600&q=75" alt="Temporada ideal"
+              loading="lazy" />
+            <span class="card-badge tip-badge">💡 Local</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">¿Cuándo visitar?</h3>
+            <p class="card-desc">Nov-Dic es ideal: Festival del Tequila y clima perfecto. Feb-Abr para ver la jimación
+              del agave.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+        <div class="card card-tip reveal-card" data-category="recomendaciones" data-name="El Tren Tequila Express"
+          data-desc="Una experiencia épica: el tren histórico que sale de Guadalajara y llega a Tequila con show de mariachi a bordo, cata de tequilas, visita a destilería y regreso al atardecer. Muy popular en fines de semana. Reserva con mínimo 2 semanas de anticipación."
+          data-img="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&q=80" data-rating="4.9"
+          data-precio="$$$" data-horario="Sábados">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=75"
+              alt="Tren Tequila Express" loading="lazy" />
+            <span class="card-badge tip-badge">💡 Local</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Tren Tequila Express</h3>
+            <p class="card-desc">Desde Guadalajara con mariachi, catas y destilería. Solo sábados. Reserva con 2 semanas
+              de anticipación.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+        <div class="card card-tip reveal-card" data-category="recomendaciones" data-name="Compra tequila como local"
+          data-desc="No compres en las tiendas de souvenir del centro. Ve directamente a las destilerías pequeñas donde venden a granel y en envases propios. El precio puede ser hasta 60% menor y la calidad, superior. Busca tequila 100% agave azul y pregunta por el 'añejo de barrica'."
+          data-img="https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=800&q=80" data-rating="5.0"
+          data-precio="Info" data-horario="Todo el día">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&q=75" alt="Compra tequila"
+              loading="lazy" />
+            <span class="card-badge tip-badge">💡 Local</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Compra tequila como local</h3>
+            <p class="card-desc">Ve directo a destilerías pequeñas. Precio hasta 60% menor que las tiendas turísticas.
+              Pide el añejo de barrica.</p>
+            <button class="btn-card">Ver más →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TOURS ========== -->
+  <section class="cards-section" id="tours" data-section="tours">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">🌵 Experiencias</div>
+        <h2 class="section-title">Tours & Experiencias</h2>
+        <p class="section-sub">Vive Tequila de adentro hacia afuera con nuestros guías locales certificados</p>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card card-tour reveal-card" data-category="tours" data-name="Tour Agavero al Amanecer"
+          data-desc="Comienza a las 5:30am en los campos de agave al amanecer. Un jimador experto te enseñará la técnica ancestral de corte del agave. Después, desayuno en el campo y visita a la destilería artesanal donde verás la cocción, fermentación y destilación en vivo. Duración: 5 horas."
+          data-img="https://images.unsplash.com/photo-1500964757637-c85e8a162429?w=800&q=80" data-rating="5.0"
+          data-precio="$89 USD" data-horario="5:30am · 5hrs">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1500964757637-c85e8a162429?w=600&q=75"
+              alt="Tour Agavero al Amanecer" loading="lazy" />
+            <span class="card-badge">⭐ 5.0</span>
+            <span class="card-precio">$89 USD</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Tour Agavero al Amanecer</h3>
+            <p class="card-desc">Campos de agave al alba, técnica de jimado con expertos y destilería artesanal en vivo.
+              5 horas.</p>
+            <button class="btn-card btn-reservar-tour">Reservar ahora →</button>
+          </div>
+        </div>
+
+        <div class="card card-tour reveal-card" data-category="tours" data-name="Cata Maestra de Tequilas"
+          data-desc="En la sala de barricas de una destilería centenaria, un maestro catador te guiará a través de 8 expresiones de tequila: blanco, joven, reposado, añejo y extra añejo. Aprenderás a identificar notas, aromas y la diferencia entre agaves. Incluye tabla de quesos y botanas mexicanas."
+          data-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" data-rating="4.9"
+          data-precio="$65 USD" data-horario="6pm · 2.5hrs">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="Cata Maestra"
+              loading="lazy" />
+            <span class="card-badge">⭐ 4.9</span>
+            <span class="card-precio">$65 USD</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Cata Maestra de Tequilas</h3>
+            <p class="card-desc">8 expresiones guiadas por un maestro catador. Desde blanco hasta extra añejo. Tabla de
+              quesos incluida.</p>
+            <button class="btn-card btn-reservar-tour">Reservar ahora →</button>
+          </div>
+        </div>
+
+        <div class="card card-tour reveal-card" data-category="tours" data-name="Tour en Burro por el Agaval"
+          data-desc="La experiencia más fotogénica de Tequila. Recorre los agavales en burro como lo hacían los jimadores de antaño. El recorrido de 3 horas atraviesa las milpas de agave azul con guía bilingüe, mariachi en vivo en el punto más alto y coctel de bienvenida al regreso."
+          data-img="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80" data-rating="4.8"
+          data-precio="$45 USD" data-horario="9am · 3hrs">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=75" alt="Tour en Burro"
+              loading="lazy" />
+            <span class="card-badge">⭐ 4.8</span>
+            <span class="card-precio">$45 USD</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Tour en Burro por el Agaval</h3>
+            <p class="card-desc">Recorre los agavales en burro con mariachi en vivo. La experiencia más auténtica y
+              fotogénica de Tequila.</p>
+            <button class="btn-card btn-reservar-tour">Reservar ahora →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BANNER CTA ========== -->
+  <section class="cta-banner reveal-up">
+    <div class="cta-bg">
+      <img src="https://images.unsplash.com/photo-1475598322381-f1b499717dda?w=1600&q=80" alt="Tequila Jalisco" />
+      <div class="cta-overlay"></div>
+    </div>
+    <div class="cta-content">
+      <span class="cta-tag">¿Listo para vivir la experiencia?</span>
+      <h2 class="cta-title">Tu aventura en Tequila<br />comienza aquí</h2>
+      <p class="cta-sub">Planeamos tu visita completa: tours, hoteles, restaurantes y más.</p>
+      <a href="#tours" class="btn-primary btn-lg">Planear mi visita</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo logo-footer">
+          <span class="logo-icon">✦</span>
+          <span class="logo-text">Agavitox</span>
+        </a>
+        <p class="footer-tagline">Tu guía definitiva para explorar<br />Tequila, Jalisco, México.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok" class="social-link">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.54V6.78a4.85 4.85 0 01-1.01-.09z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="social-link">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="#restaurantes">Restaurantes</a></li>
+          <li><a href="#lugares">Lugares turísticos</a></li>
+          <li><a href="#hoteles">Hoteles</a></li>
+          <li><a href="#recomendaciones">Tips locales</a></li>
+          <li><a href="#tours">Tours</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="#">Cómo llegar</a></li>
+          <li><a href="#">Qué llevar</a></li>
+          <li><a href="#">Seguridad</a></li>
+          <li><a href="#">Mapa interactivo</a></li>
+          <li><a href="#">Blog de viajes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:hola@agavitox.mx">hola@agavitox.mx</a></li>
+          <li><a href="tel:+523741234567">+52 374 123 4567</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">Tequila, Jalisco, México</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Agavitox. Todos los derechos reservados.</p>
+      <div class="footer-legal">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== MODAL ========== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+      <div class="modal-img-wrap">
+        <img src="" alt="" id="modalImg" />
+        <div class="modal-img-overlay"></div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span class="modal-rating" id="modalRating"></span>
+          <span class="modal-precio" id="modalPrecio"></span>
+          <span class="modal-horario" id="modalHorario"></span>
+        </div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-ctas">
+          <a href="#tours" class="btn-primary" id="modalCta">Reservar ahora</a>
+          <button class="btn-ghost-dark" id="modalCloseBtn">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== BTN VOLVER ARRIBA ========== -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
